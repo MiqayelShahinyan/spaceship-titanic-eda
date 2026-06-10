@@ -10,7 +10,18 @@ Exploratory data analysis: data quality, distributions, target relationships,
 feature engineering ideas.
 
 ## Key findings
-The Spaceship Titanic when appeared in cosmic mystery in 2912 the passengers were transported to an alternate dimension. We understand what the anomalia were in the right side of the spaceship were was leaving most of prysleeping people from Europa and and Mars. The most of people's destination was TRAPPIST-1e. People from Earth cryposleeped less and there were no VIP person because they were poor but the cryosleeping peoples were more likely to be transported. Peoples from B and C deck were transported more than others and we can predict that the B and C deck were extrimly on the right side of the spaceship. Passengers from the same group often share the same Transported outcome. Many groups are fully consistent (all transported or all not transported), which indicates strong group-level dependency.
+Facts (from data):
+- CryoSleep is strongly correlated with Transported
+- Passengers from Europa/Mars transported more than Earth
+- Decks B and C have the highest transport rate
+- Side P/S of cabin affects transport rate
+- Passengers in the same group usually share the same outcome
+- Most passengers travel to TRAPPIST-1e
+
+Implications for modeling:
+- CryoSleep, Cabin (deck/side), HomePlanet, group_id are likely strong features
+- Spending columns are highly skewed → log-transform may help
+- group_id can be used to build group-level features
 
 ## Next steps
 1. Create engineered features:
